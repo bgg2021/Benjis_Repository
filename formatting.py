@@ -2,7 +2,7 @@
 FORMATTING PROBLEM SET (12 PTS)
 '''
 
-# put your name HERE
+# BENJI GOURDJI
 # https://github.com/fwparkercode/Programming2_SP19
 # New change
 
@@ -10,36 +10,38 @@ FORMATTING PROBLEM SET (12 PTS)
 PROBLEM 1 (2pts)
 Use {}.format() to print 0.000321192 in scientific notation to two decimals
 '''
+print("{:1.2e}".format(0.000321192))
+
 
 '''
 PROBLEM 2 (2pts)
 You get 8 out of 9 on a quiz.
 Print 8/9 using {}.format() so that it appears as 89%
 '''
+print("{:2.0%}".format(8/9))
 
 
 '''
 PROBLEM 3 (3pts)
 Take the following program:
-
 score = 41237
 highscore = 1023407
 print("Score:      " + str(score) )
 print("High score: " + str(highscore) )
-
 Which right now outputs:
 Score:      41237
 High score: 1023407
-
 Use print formatting so that the output instead looks like:
 Score:          41,237
 High score:  1,023,407
-
 Make sure the print formatting works for any integer from zero to nine million. 
 Do not use any concatenation in your code (no plus signs). 
 You should only have two double quotes in each print statement.
 '''
-
+score = 41237
+highscore = 1023407
+print("Score:         {:,}".format(score) )
+print("High score: {:,}".format(highscore) )
 
 '''
 PROBLEM 4 (5 pts) 
@@ -66,3 +68,7 @@ Use print formatting to EXACTLY match the following output:
 1/19 = 0.0526
 1/20 = 0.05
 '''
+
+for i in range(1, 21):
+  my_fraction = 1 / i
+  print("1/"+str(i), "= {:<.3}".format(my_fraction))
