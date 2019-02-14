@@ -1,26 +1,5 @@
-'''
-Make a text based version of hangman (25pts)
-Use the sample run as an example.  Try to make it as close as possible to the example. (or better)
-'''
-
-# PSEUDOCODE
-# make a word list for your game
-# grab a random word from your list and store it as a variable
-# display the hangman
-# display the used letters
-# display the length of the word to the user using blank spaces
-# prompt the user to guess a letter
-# if the guess is correct increment correct_guesses by 1
-# if the guess is incorrect increment incorrect_guesses by 1 and draw the next part of the hangman
-# don't allow the user to select the same letter twice
-# if the incorrect_guesses is greater than 6, tell the user they lost and exit the program
-# if correct_guesses is equal to the length of the word, tell the user they won
-# ask if they want to play again
-
-
-# Feel free to use this list of ascii art for your game
-
-HANGMANPICS = ['''
+# BENJI GOURDJI
+hangmanpics = ['''
   +---+
   |   |
       |
@@ -71,15 +50,40 @@ HANGMANPICS = ['''
       |
 =========''']
 
+import random
+used_letters = []
+correct_guesses = 0
+incorrect_guesses = 0
+done = False
+word_list = ["quat", "anonymity", "cat", "theoretical", "artist", "kleptomaniac", "wand", "ytterbium", "statistically", "blockage"]
+random_word = word_list[random.randrange(len(word_list))]
+spaces = len(random_word)
 
-
-
-
-
-
-
-
-
-
-
-
+while not done:
+    print(hangmanpics[incorrect_guesses])
+    print("used letters: ", used_letters)
+    for char in random_word:
+        if char in used_letters:
+            print(char, end=" ")
+        else:
+            print("_", end=" ")
+    # prompt the user to guess a letter
+    guess = (input("\n\nguess a letter: "))
+    # if the guess is correct increment correct_guesses by 1
+    if guess in used_letters:
+        print("you already guessed that.")
+    if guess.lower() in random_word:
+        correct_guesses += 1
+        used_letters.append(guess)
+        print(guess.lower())
+    else:
+        incorrect_guesses += 1
+        used_letters.append(guess)
+        if guess.lower() not in used_letters:
+            print(hangmanpics[incorrect_guesses])
+    if incorrect_guesses >= 6:
+        print("No. You lost.")
+        done = True
+    if correct_guesses == len(random_word):
+        print("You Win")
+        done = True
