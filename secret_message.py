@@ -11,3 +11,25 @@ for line in decode_me:
         number = mark[1]
         for i in range(mark[1]):
             print(mark[0], end=" ")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+hi = 0
