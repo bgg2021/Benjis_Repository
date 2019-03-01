@@ -10,8 +10,11 @@ def split_line(line):
 
 dictionary_list = []
 
-file = open('C:\Users\User\PycharmProjects\Programming2_SP19\Labs And Problem Sets\dictionary', 'r')
+file = open('dictionary', 'r')
 for line in file:
     line = line.strip()
     dictionary_list.append(line)
-print(dictionary_list)
+
+print("--- Linear Search ---")
+
+file = open('alice_ch1', 'r')

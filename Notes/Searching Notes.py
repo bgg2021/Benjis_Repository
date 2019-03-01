@@ -95,3 +95,18 @@ if found:
 else:
     print("Could not find", key, "after", loops, "loops")
 
+# Read in Alice
+import re
+
+# This function takes in a line of text and returns
+# a list of words in the line.
+def split_line(line):
+    return re.findall('[A-Za-z]+(?:\'[A-Za-z]+)?', line)
+
+
+villains = open('villains.txt', 'r')
+
+for villain in villains:
+    words = split_line(villain.strip())
+    for word in words:
+        print(word)
