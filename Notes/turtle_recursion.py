@@ -56,7 +56,7 @@ def recursive_rect(width, height, depth, line_width, color):
             my_turtle.right(90)
         recursive_rect(width * 1.1, height * 1.1, depth - 1, line_width * 1.1, color)
 
-#recursive_rect(25, 15, 50, 0.27, "pink")
+recursive_rect(25, 15, 50, 0.27, "pink")
 
 def march_mathness(x, y, height, depth):
     my_turtle.penup()
@@ -82,7 +82,7 @@ def march_mathness(x, y, height, depth):
         march_mathness(pos1[0], pos1[1], height / 2, depth - 1)
         march_mathness(pos2[0], pos2[1], height / 2, depth - 1)
 
-march_mathness(-300, 5, 155, 5)
+#march_mathness(-300, 5, 155, 5)
 
 
 
