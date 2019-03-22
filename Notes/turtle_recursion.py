@@ -3,7 +3,7 @@ import turtle
 my_turtle = turtle.Turtle()  # create a turtle object
 my_screen = turtle.Screen()  # create a screen object
 
-my_turtle.pensize(3)  # width
+my_turtle.pensize(3)
 my_turtle.speed(0)
 #my_turtle.shape("turtle")
 
