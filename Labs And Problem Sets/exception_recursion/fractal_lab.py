@@ -1,5 +1,7 @@
 import turtle
 
+# Make sure you run each one individually.  The screen clear will mess the snowflake/pinwheel up.
+
 #Turtle Recursion (25pts)
 
 #1)  Using the turtle library, create the H fractal pattern according to the file shown in the data folder. (10pts)
@@ -56,7 +58,7 @@ def h_tree (x, y, length, depth, color, thickness):
         h_tree(pos4[0], pos4[1], length / 2, depth - 1, color, thickness - 0.5)
 
 
-h_tree(0, 0, 160, 4, "black", 4)
+h_tree(0, 0, 160, 3, "black", 4)
 
 my_screen.clear()
 
