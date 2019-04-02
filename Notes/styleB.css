@@ -1,0 +1,29 @@
+
+ /* comment */
+
+
+  p {
+  background-color: lightblue;
+
+  }
+
+  ol {
+  color: red;
+  }
+
+  li {
+      border: 2px solid black;
+      }
+
+#para3 {
+color: blue;
+}
+
+.bold {
+    font-weight: bold;
+
+}
+
+ol li.bold {
+    color: green;
+}
