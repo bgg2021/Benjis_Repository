@@ -1,0 +1,40 @@
+<TempLayout>:
+    orientation: "vertical"
+    id: calculator
+    temp: _temp
+    answer: _answer
+    Label:
+        text: "Temperature Conversion"
+        font_size: 40
+        font_name: "Midnight_Drive.otf"
+        color: [0.5, 0, 1, 1]
+
+    BoxLayout:
+        orientation: "horizontal"
+        Label:
+            text: "Temperature:"
+            size_hint_x: 0.3
+        TextInput:
+            id: _temp
+            font_size: 25
+            input_filter: "float"  # prevents letters from being entered
+            size_hint_x: 0.7
+
+    BoxLayout:
+        Button:
+            text: "Convert Celsius to Fahrenheit"
+            font_size: 18
+            font_name: "Qiba Serif.ttf"
+            on_press: calculator.f_conversion()
+        Button:
+            text: "Convert Fahrenheit to Celsius"
+            font_size: 18
+            font_name:"Qiba Serif.ttf"
+            on_press: calculator.c_conversion()
+
+    BoxLayout:
+        Label:
+            text: "Answer: "
+        Label:
+            text: "Converted Temperature"
+            id: _answer

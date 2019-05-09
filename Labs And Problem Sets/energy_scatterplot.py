@@ -36,4 +36,47 @@ headers = data.pop(0)
 print(headers)
 
 ghg_emissions = []
-sq_ft = []
+sq_ft_list = []
+school_list = []
+ghg_intensity = []
+name_list = []
+
+for i in data:
+    try:
+        buildings = i[2]
+        if i[6] == "K-12 School":
+            school_list.append(i)
+
+    except ValueError:
+        print("value error")
+
+for school in school_list:
+    try:
+        sq_ft = float(school[7])
+        ghg = float(school[20])
+        intensity = float(school[21])
+        name = str(school[2])
+        sq_ft_list.append(sq_ft)
+        ghg_emissions.append(ghg)
+        ghg_intensity.append(intensity)
+        name_list.append(name)
+    except ValueError:
+        print("value error")
+
+
+plt.scatter(sq_ft_list, ghg_emissions, s=19, alpha=0.6, marker="p", edgecolors="black", )
+
+m, b = np.polyfit(sq_ft_list, ghg_emissions, 1)
+fit_x = [0, 700000]
+fit_y = [b, m * 700000 + b]
+plt.plot(fit_x, fit_y, color="red")
+plt.title("GHG Emissions vs Square Footage For Buildings In Chicago")
+plt.xlabel("Building Size in Square Feet")
+plt.ylabel("GHG Emissions")
+plt.annotate("Francis Parker", xy=(sq_ft_list[476], ghg_emissions[476]))
+
+
+print(school_list[476])
+plt.show()
+
+

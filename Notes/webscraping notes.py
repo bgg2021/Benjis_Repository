@@ -53,3 +53,7 @@ print(len(quotes), len(authors))
 for i in range(len(quotes)):
     print(quotes[i])
     print("\t-", authors[i].text)
+
+links = soup.findAll("a",)
+print(links)
+
