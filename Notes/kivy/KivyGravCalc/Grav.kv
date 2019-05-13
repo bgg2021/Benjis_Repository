@@ -1,2 +1,64 @@
+<CustBoxLayout@BoxLayout>:
+    spacing: 1
+
+<CustButton@Button>:
+    font_size: 25
+    background_normal: ""
+    background_color: 0.85, 0.85, 0.85, 1
+    color: 0, 0, 1, 1 # foreground color
+    canvas:
+        Color:
+            rgba: (1, 0, 0, 1)
+        Line:
+            width: 2
+            rectangle: self.x, self.y, self.width, self.height
+
 <GravLayout>:
-    orientation
+    orientation: "vertical"
+    mass1: mass1
+    mass2: mass2
+    radius: radius
+    output: output
+
+    CustBoxLayout:
+        Label:
+            text: "Gravity Calculator"
+            font_size: 40
+            font_name: "Midnight_Drive.otf"
+
+    CustBoxLayout:
+        Label:
+            text: "Input Radius -->"
+            font_size: 20
+        TextInput:
+            id: radius
+            font_size: 20
+            input_filter: "float"
+
+    CustBoxLayout:
+        Label:
+            text: "Input Mass 1 -->"
+            font_size: 20
+        TextInput:
+            id: mass1
+            font_size: 20
+            input_filter: "float"
+
+    CustBoxLayout:
+        Label:
+            text: "Input Mass 2 -->"
+            font_size: 20
+        TextInput:
+            id: mass2
+            font_size: 20
+            input_filter: "float"
+
+    CustBoxLayout:
+        CustButton:
+            text: "Calculate"
+            on_press: root.gravcalc()
+        Label:
+            id: output
+            text: "Answer"
+            font_size: 25
+            size_hint_x: 1
