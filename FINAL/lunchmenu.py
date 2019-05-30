@@ -135,23 +135,8 @@ friday = (" ".join(friday_list)) + "."
 
 weekday = datetime.date.today().strftime("%A")
 
-account_sid = "ACe4fa68e52fd53e803554bf13cd2315f1"
-auth_token = "7bbe3438f08c7aa741b355f2a66a3ba9"
-client = Client(account_sid, auth_token)
+f = open("menu.txt", "w")
 
+day_list = [monday, tuesday, wednesday, thursday, friday]
 
-if weekday == "Monday":
-    custom_message = client.messages.create(body=(monday), from_='+18722814020', to='+13126232822')
-    print("monday", custom_message.sid)
-if weekday == "Tuesday":
-    custom_message = client.messages.create(body=(tuesday), from_='+18722814020', to='+13126232822')
-    print("tuesday", custom_message.sid)
-if weekday == "Wednesday":
-    custom_message = client.messages.create(body=(wednesday), from_='+18722814020', to='+13126232822')
-    print("wednesday", custom_message.sid)
-if weekday == "Thursday":
-    custom_message = client.messages.create(body=(thursday), from_='+18722814020', to='+13126232822')
-    print("thursday", custom_message.sid)
-if weekday == "Friday":
-    custom_message = client.messages.create(body=(friday), from_='+18722814020', to='+13126232822')
-    print("friday", custom_message.sid)
+f.write(str(day_list))
