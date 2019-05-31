@@ -133,10 +133,19 @@ wednesday = (" ".join(wednesday_list)) + "."
 thursday = (" ".join(thursday_list)) + "."
 friday = (" ".join(friday_list)) + "."
 
-weekday = datetime.date.today().strftime("%A")
+#weekday = datetime.date.today().strftime("%A")
 
 f = open("menu.txt", "w")
 
 day_list = [monday, tuesday, wednesday, thursday, friday]
 
 f.write(str(day_list))
+
+
+now = datetime.datetime.now()  # this creates a datetime object
+weekday = (now.weekday())  # monday is 0. sunday is 6
+hour = (now.hour)
+if hour >= 14:
+    weekday += 1
+if weekday > 4:
+    weekday = 0
